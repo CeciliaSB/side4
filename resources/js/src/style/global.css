@@ -1,8 +1,0 @@
-body.dark-mode {
-    background-color: #212529; /* Dark background for dark mode */
-    color: #ffffff; /* Light text for dark mode */
-}
-
-body.dark-mode .navbar {
-    background-color: #000; /* Example: Dark navbar */
-}

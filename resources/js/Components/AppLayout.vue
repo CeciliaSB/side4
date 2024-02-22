@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" >
         <Navbar />
         <router-view />
     </div>
@@ -14,3 +14,6 @@ export default {
     }
 };
 </script>
+<style>
+
+</style>

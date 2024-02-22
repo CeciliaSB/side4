@@ -7,17 +7,22 @@
                         <div class="logo-container mb-4"></div>
                         <form class="signIn-form">
                             <div class="mb-3 d-flex justify-content-center">
-                                <input type="text" class="form-control rounded-0 input-style" placeholder="E-mail">
+                                <input type="text" class="form-control rounded-0 input-style" placeholder="Username">
                             </div>
                             <div class="mb-3 d-flex justify-content-center">
                                 <input type="password" class="form-control rounded-0 input-style" placeholder="Password">
                             </div>
+                            <div class="mb-3 d-flex justify-content-center">
+                                <input type="text" class="form-control rounded-0 input-style" placeholder="Confirm password">
+                            </div>
+                            <div class="mb-3 d-flex justify-content-center">
+                                <input type="text" class="form-control rounded-0 input-style" placeholder="E-mail">
+                            </div>
                             <button class="btn btn-outline-secondary mt-4 w-100 justify-content-center align-items-center">
-                                <span>Sign In</span>
+                                <span>Sign Up</span>
                             </button>
                             <div class="mt-5">
-                                <router-link to="/password/reset" class="float-start forgot text-decoration-none" aria-current="page"> Forgot Password? </router-link>
-                                <router-link to="/signUp" class="float-end signUp text-decoration-none" aria-current="page">Sign Up</router-link>
+                                <span class=" d-flex justify-content-center forgot"> Have an account?  </span>
                             </div>
                         </form>
                     </div>
@@ -27,17 +32,13 @@
     </div>
 </template>
 <script>
-import SignUp from "@/Components/SignUp.vue";
-import PasswordReset from "@/Components/PasswordReset.vue";
-     export default {
-         components: {
-             SignUp,
-             PasswordReset
-         },
-         mounted() {
-             console.log('Component mounted.')
-         }
-     }
+
+export default {
+    name: 'Sign Up',
+    mounted() {
+        console.log('Component mounted.')
+    }
+}
 </script>
 
 <style>

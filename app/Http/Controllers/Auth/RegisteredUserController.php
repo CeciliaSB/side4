@@ -37,6 +37,8 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $request['password'] = bcrypt($request['password']);
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,

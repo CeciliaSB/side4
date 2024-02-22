@@ -25,9 +25,11 @@ export default {
         }
 
         function updateTheme() {
-            document.body.classList.toggle('dark-mode', isDarkMode.value);
-            localStorage.setItem('theme', isDarkMode.value ? 'dark' : 'light');
+            const themeValue = isDarkMode.value ? 'dark' : 'light';
+            document.body.setAttribute('data-bs-theme', themeValue); // Toggle the data-bs-theme attribute
+            localStorage.setItem('theme', themeValue);
         }
+
 
         return { isDarkMode, toggleDarkMode };
     },

@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 import './bootstrap';
-import '../css/app.css';
-import './src/style/global.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../css/app.css';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons'; // Import all solid icons
 import { fab } from '@fortawesome/free-brands-svg-icons'; // Import all brand icons
@@ -12,7 +12,7 @@ import routes from './routes.js';
 import 'bootstrap/dist/css/bootstrap.css'
 import axios from "axios";
 
-
+import './src/style/global.scss';
 import AppLayout from "@/Components/AppLayout.vue";
 import Login from "@/Components/Login.vue"; // Adjust this path as needed
 
