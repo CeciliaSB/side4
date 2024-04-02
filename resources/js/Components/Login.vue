@@ -5,12 +5,24 @@
                 <div class=" signIn-container" >
                     <div class="card d-flex flex-column align-items-center h-100">
                         <div class="logo-container mb-4"></div>
-                        <form class="signIn-form">
+                        <form class="signIn-form" @submit.prevent="login">
                             <div class="mb-3 d-flex justify-content-center">
-                                <input type="text" class="form-control rounded-0 input-style" placeholder="E-mail">
+                                <input
+                                    type="text"
+                                    class="form-control rounded-0 input-style"
+                                    placeholder="E-mail"
+                                    v-model="user.email"
+                                    required
+                                >
                             </div>
                             <div class="mb-3 d-flex justify-content-center">
-                                <input type="password" class="form-control rounded-0 input-style" placeholder="Password">
+                                <input
+                                    type="password"
+                                    class="form-control rounded-0 input-style"
+                                    placeholder="Password"
+                                    v-model="user.password"
+                                    required
+                                >
                             </div>
                             <button class="btn btn-outline-secondary mt-4 w-100 justify-content-center align-items-center">
                                 <span>Sign In</span>
@@ -27,12 +39,36 @@
     </div>
 </template>
 <script>
+import axios from "axios";
 import SignUp from "@/Components/SignUp.vue";
 import PasswordReset from "@/Components/PasswordReset.vue";
-     export default {
+
+
+export default {
+         data(){
+             return {
+                 user: {
+                     email:'',
+                     password:'',
+                 },
+             }
+         },
          components: {
              SignUp,
              PasswordReset
+         },
+         methods: {
+             async login(){
+                 try {
+                     const response =await axios.post('/login', this.user);
+                     this.$router.push({ path: '/' });
+                 } catch (error) {
+                     console.error(error);
+                     if (error.response && error.response.data) {
+                         alert(error.response.data.message);
+                     }
+                 }
+             }
          },
          mounted() {
              console.log('Component mounted.')
